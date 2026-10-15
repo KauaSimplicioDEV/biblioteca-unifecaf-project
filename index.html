@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Biblioteca Digital UniFECAF: acervo, livros em destaque, unidades e contatos para estudantes.">
+  <title>Biblioteca Digital UniFECAF</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO E NAVEGAÇÃO -->
+  <header class="topo">
+    <nav class="menu" aria-label="Navegação principal">
+      <a class="menu__marca" href="#biblioteca">Biblioteca UniFECAF</a>
+      <ul class="menu__lista">
+        <li><a href="#biblioteca">Biblioteca</a></li>
+        <li><a href="#livros">Livros</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#contatos">Contatos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero" id="biblioteca" aria-labelledby="titulo-hero">
+      <img class="hero__imagem" src="assets/imagens/hero.svg" alt="Estantes de uma biblioteca com livros coloridos">
+      <div class="hero__cartao">
+        <h1 id="titulo-hero">Biblioteca Digital UniFECAF</h1>
+        <p>Livros, materiais acadêmicos e apoio ao estudo reunidos em um só lugar.</p>
+        <a class="botao botao--verde" href="#livros">Ver os livros</a>
+      </div>
+    </section>
+
+    <!-- SOBRE A BIBLIOTECA -->
+    <section class="sobre secao secao--azul" aria-labelledby="titulo-sobre">
+      <div class="container">
+        <h2 id="titulo-sobre" class="secao__titulo">Sobre a nossa biblioteca</h2>
+
+        <div class="sobre__grade">
+          <p>A Biblioteca Digital nasce para aproximar o estudante do conhecimento. Aqui você encontra livros de apoio às disciplinas, descobre as categorias do acervo e acompanha os destaques de cada período letivo.</p>
+          <img class="sobre__imagem" src="assets/imagens/sobre.svg" alt="Estantes iluminadas com livros de diferentes áreas">
+          <p>Nosso objetivo é tornar a consulta simples: você escolhe uma categoria, conhece o livro e sabe como pedir ajuda para retirar ou acessar o material, seja no computador ou no celular.</p>
+        </div>
+
+        <ul class="destaques">
+          <li>
+            <figure>
+              <img src="assets/imagens/icone-acervo.svg" alt="Pilha de livros coloridos">
+              <figcaption>Acervo digital</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="assets/imagens/icone-emprestimo.svg" alt="Calendário com marca de confirmação">
+              <figcaption>Empréstimos e reservas</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="assets/imagens/icone-estudo.svg" alt="Notebook aberto com texto na tela">
+              <figcaption>Apoio ao estudo</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="assets/imagens/icone-atendimento.svg" alt="Balão de conversa">
+              <figcaption>Atendimento ao aluno</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAIXA DE IMAGEM -->
+    <section class="faixa" aria-label="Imagem de destaque">
+      <img src="assets/imagens/banner.svg" alt="Notebook exibindo o acervo digital, cercado por pilhas de livros">
+    </section>
+
+    <!-- NOSSOS LIVROS -->
+    <section class="livros secao secao--escura" id="livros" aria-labelledby="titulo-livros">
+      <div class="container">
+        <h2 id="titulo-livros" class="secao__titulo">Nossos livros</h2>
+
+        <div class="livros__grade">
+          <article class="cartao">
+            <h3 class="cartao__nome">Introdução à Programação</h3>
+            <img src="assets/imagens/capa-programacao.svg" alt="Capa azul do livro Introdução à Programação">
+            <p>Primeiros passos em variáveis, condicionais e repetições, com exercícios para praticar.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3 class="cartao__nome">Design Web Responsivo</h3>
+            <img src="assets/imagens/capa-design-web.svg" alt="Capa verde do livro Design Web Responsivo">
+            <p>Como organizar páginas em HTML e CSS para que funcionem bem em qualquer tela.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3 class="cartao__nome">Banco de Dados</h3>
+            <img src="assets/imagens/capa-banco-dados.svg" alt="Capa roxa do livro Banco de Dados">
+            <p>Modelagem, tabelas e consultas SQL explicadas com exemplos do dia a dia.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3 class="cartao__nome">Redes de Computadores</h3>
+            <img src="assets/imagens/capa-redes.svg" alt="Capa verde-azulada do livro Redes de Computadores">
+            <p>Protocolos, endereçamento e o caminho que um dado percorre até chegar ao destino.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3 class="cartao__nome">Gestão de Projetos</h3>
+            <img src="assets/imagens/capa-projetos.svg" alt="Capa laranja do livro Gestão de Projetos">
+            <p>Planejamento, prazos e acompanhamento de equipes em projetos acadêmicos e profissionais.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3 class="cartao__nome">Lógica e Algoritmos</h3>
+            <img src="assets/imagens/capa-algoritmos.svg" alt="Capa azul-escura do livro Lógica e Algoritmos">
+            <p>Raciocínio lógico passo a passo para resolver problemas antes de escrever código.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AS UNIDADES -->
+    <section class="unidades secao secao--noite" id="unidades" aria-labelledby="titulo-unidades">
+      <div class="container">
+        <h2 id="titulo-unidades" class="secao__titulo">As unidades</h2>
+
+        <article class="unidade">
+          <img src="assets/imagens/unidade-1.svg" alt="Fachada azul da Unidade 1 sob um céu claro">
+          <div class="unidade__texto">
+            <h3>Unidade 1</h3>
+            <p>Espaço principal da biblioteca, com salas de leitura silenciosas, mesas para estudo em grupo e computadores para consulta ao acervo digital.</p>
+          </div>
+        </article>
+
+        <article class="unidade">
+          <img src="assets/imagens/unidade-2.svg" alt="Fachada verde-azulada da Unidade 2">
+          <div class="unidade__texto">
+            <h3>Unidade 2</h3>
+            <p>Unidade voltada ao estudo de tecnologia, com exemplares das áreas de programação, redes e dados e equipe pronta para orientar pesquisas.</p>
+          </div>
+        </article>
+
+        <article class="unidade">
+          <img src="assets/imagens/unidade-3.svg" alt="Fachada da Unidade 3 com cinco andares">
+          <div class="unidade__texto">
+            <h3>Unidade 3</h3>
+            <p>Ambiente amplo para reservas de cabines, empréstimos e retirada de livros solicitados pelo acervo digital.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTATOS -->
+    <section class="contatos secao secao--clara" id="contatos" aria-labelledby="titulo-contatos">
+      <div class="container contatos__grade">
+        <div class="contatos__texto">
+          <h2 id="titulo-contatos" class="secao__titulo">Contatos</h2>
+          <p>Dúvidas sobre empréstimos, reservas ou acesso aos materiais? Fale com a equipe da biblioteca. Respondemos em até dois dias úteis.</p>
+          <address>
+            <p>E-mail: <a href="mailto:biblioteca@unifecaf.edu.br">biblioteca@unifecaf.edu.br</a></p>
+            <p>Telefone: <a href="tel:+551100000000">(11) 0000-0000</a></p>
+            <p>Atendimento: segunda a sexta, das 8h às 21h</p>
+          </address>
+        </div>
+        <img class="contatos__imagem" src="assets/imagens/contato.svg" alt="Envelope e marcador de localização">
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Biblioteca Digital UniFECAF &middot; Projeto acadêmico da disciplina Design Web</p>
+  </footer>
+</body>
+</html>

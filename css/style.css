@@ -1,0 +1,299 @@
+/* ==========================================================
+   Biblioteca Digital UniFECAF — style.css
+   Organização: 1. Variáveis  2. Base  3. Componentes
+   4. Seções  5. Responsividade
+   ========================================================== */
+
+/* 1. VARIÁVEIS (identidade visual) ------------------------- */
+:root {
+  --azul:        #0A5FA8; /* azul institucional */
+  --azul-escuro: #063A63;
+  --azul-noite:  #04263F;
+  --verde:       #0C7A4D; /* botões com texto branco */
+  --verde-claro: #3DDC97; /* destaques sobre fundo escuro */
+  --claro:       #EAF2FA;
+  --branco:      #FFFFFF;
+  --texto:       #14212E;
+
+  --fonte-titulo: "Poppins", "Segoe UI", Arial, sans-serif;
+  --fonte-texto:  "Lora", Georgia, "Times New Roman", serif;
+
+  --largura: 1120px;
+  --raio: 14px;
+  --altura-menu: 64px;
+}
+
+/* 2. BASE -------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--altura-menu);
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--texto);
+  background: var(--branco);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.2;
+  margin: 0 0 .75rem;
+}
+
+p { margin: 0 0 1rem; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+a:focus-visible, .botao:focus-visible {
+  outline: 3px solid var(--verde-claro);
+  outline-offset: 3px;
+}
+
+.pular {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: .6rem 1rem;
+  background: var(--branco);
+  color: var(--azul-noite);
+  font-family: var(--fonte-titulo);
+  z-index: 20;
+}
+.pular:focus { top: 1rem; }
+
+.container {
+  width: min(100% - 2.5rem, var(--largura));
+  margin-inline: auto;
+}
+
+/* 3. COMPONENTES ------------------------------------------- */
+.botao {
+  display: inline-block;
+  padding: .7rem 1.6rem;
+  border-radius: 999px;
+  background: var(--azul);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 2px solid var(--azul);
+  transition: background-color .2s, color .2s;
+}
+.botao:hover { background: var(--azul-escuro); border-color: var(--azul-escuro); }
+.botao--verde { background: var(--verde); border-color: var(--verde); }
+.botao--verde:hover { background: #095E3B; border-color: #095E3B; }
+
+/* Topo / menu */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--azul-noite);
+  border-bottom: 3px solid var(--verde-claro);
+}
+.menu {
+  width: min(100% - 2.5rem, var(--largura));
+  margin-inline: auto;
+  min-height: var(--altura-menu);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.menu__marca {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  color: var(--branco);
+  text-decoration: none;
+}
+.menu__lista { display: flex; gap: .25rem; }
+.menu__lista a {
+  display: block;
+  padding: .55rem 1rem;
+  border-radius: 8px;
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  font-size: .95rem;
+  text-decoration: none;
+}
+.menu__lista a:hover { background: var(--azul); }
+
+/* Seções (estrutura comum) */
+.secao { padding: 4rem 0; }
+.secao__titulo { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
+
+.secao--azul  { background: var(--azul-escuro); color: var(--branco); }
+.secao--escura{ background: var(--azul);        color: var(--branco); }
+.secao--noite { background: var(--azul-noite);  color: var(--branco); }
+.secao--clara { background: var(--claro);       color: var(--texto); }
+
+.secao--azul .secao__titulo,
+.secao--escura .secao__titulo,
+.secao--noite .secao__titulo { color: var(--branco); border-left: 6px solid var(--verde-claro); padding-left: .9rem; }
+.secao--clara .secao__titulo { color: var(--azul-escuro); border-left: 6px solid var(--verde); padding-left: .9rem; }
+
+/* 4. SEÇÕES ------------------------------------------------ */
+/* Hero */
+.hero { position: relative; background: var(--azul-noite); }
+.hero__imagem {
+  width: 100%;
+  height: clamp(300px, 42vw, 520px);
+  object-fit: cover;
+}
+.hero__cartao {
+  position: absolute;
+  left: max(1.25rem, calc((100% - var(--largura)) / 2));
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(460px, calc(100% - 2.5rem));
+  padding: 2rem;
+  border-radius: var(--raio);
+  background: rgba(4, 38, 63, .92);
+  color: var(--branco);
+}
+.hero__cartao h1 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+
+/* Sobre */
+.sobre__grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.sobre__grade p { margin: 0; }
+.sobre__imagem { border-radius: var(--raio); width: 100%; }
+
+.destaques {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.destaques figure { margin: 0; }
+.destaques img { width: 100%; border-radius: var(--raio); }
+.destaques figcaption {
+  margin-top: .6rem;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+/* Faixa */
+.faixa img {
+  width: 100%;
+  height: clamp(180px, 28vw, 380px);
+  object-fit: cover;
+}
+
+/* Livros */
+.livros__grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+.cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: var(--raio);
+  background: var(--branco);
+  color: var(--texto);
+}
+.cartao__nome {
+  font-size: 1.15rem;
+  color: var(--azul-escuro);
+  margin-bottom: 1rem;
+}
+.cartao img {
+  width: min(190px, 70%);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+.cartao p { font-size: 1rem; flex: 1; }
+
+/* Unidades */
+.unidade {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.unidade:last-child { margin-bottom: 0; }
+.unidade img { width: 100%; border-radius: var(--raio); }
+.unidade h3 { font-size: 1.4rem; color: var(--verde-claro); }
+.unidade p { margin: 0; max-width: 60ch; }
+
+/* Contatos */
+.contatos__grade {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.contatos address { font-style: normal; }
+.contatos a { color: var(--azul); font-weight: 500; }
+.contatos__imagem { width: 100%; border-radius: var(--raio); }
+
+/* Rodapé */
+.rodape {
+  background: var(--azul-noite);
+  color: var(--branco);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: .9rem;
+}
+.rodape p { margin: 0; }
+
+/* 5. RESPONSIVIDADE ---------------------------------------- */
+/* Tablet */
+@media (max-width: 900px) {
+  .sobre__grade { grid-template-columns: 1fr; }
+  .sobre__imagem { max-width: 520px; }
+  .destaques { grid-template-columns: repeat(2, 1fr); }
+  .livros__grade { grid-template-columns: repeat(2, 1fr); }
+  .contatos__grade { grid-template-columns: 1fr; }
+  .contatos__imagem { max-width: 420px; }
+}
+
+/* Smartphone */
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  .secao { padding: 3rem 0; }
+
+  .menu { flex-direction: column; padding: .6rem 0; gap: .25rem; }
+  .menu__lista { width: 100%; justify-content: space-between; }
+  .menu__lista a { padding: .5rem .6rem; font-size: .9rem; }
+  html { scroll-padding-top: 110px; }
+
+  /* O cartão do hero sai de cima da imagem para não cobri-la */
+  .hero__cartao {
+    position: static;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+    padding: 1.5rem 1.25rem 2rem;
+  }
+
+  .livros__grade { grid-template-columns: 1fr; }
+  .unidade { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .botao { transition: none; }
+}
