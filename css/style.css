@@ -1,16 +1,9 @@
-/* ==========================================================
-   Biblioteca Digital UniFECAF — style.css
-   Organização: 1. Variáveis  2. Base  3. Componentes
-   4. Seções  5. Responsividade
-   ========================================================== */
-
-/* 1. VARIÁVEIS (identidade visual) ------------------------- */
 :root {
-  --azul:        #0A5FA8; /* azul institucional */
+  --azul:        #0A5FA8;
   --azul-escuro: #063A63;
   --azul-noite:  #04263F;
-  --verde:       #0C7A4D; /* botões com texto branco */
-  --verde-claro: #3DDC97; /* destaques sobre fundo escuro */
+  --verde:       #0C7A4D;
+  --verde-claro: #3DDC97;
   --claro:       #EAF2FA;
   --branco:      #FFFFFF;
   --texto:       #14212E;
@@ -23,7 +16,6 @@
   --altura-menu: 64px;
 }
 
-/* 2. BASE -------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -73,7 +65,6 @@ a:focus-visible, .botao:focus-visible {
   margin-inline: auto;
 }
 
-/* 3. COMPONENTES ------------------------------------------- */
 .botao {
   display: inline-block;
   padding: .7rem 1.6rem;
@@ -92,7 +83,6 @@ a:focus-visible, .botao:focus-visible {
 .botao--verde { background: var(--verde); border-color: var(--verde); }
 .botao--verde:hover { background: #095E3B; border-color: #095E3B; }
 
-/* Topo / menu */
 .topo {
   position: sticky;
   top: 0;
@@ -128,7 +118,6 @@ a:focus-visible, .botao:focus-visible {
 }
 .menu__lista a:hover { background: var(--azul); }
 
-/* Seções (estrutura comum) */
 .secao { padding: 4rem 0; }
 .secao__titulo { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
 
@@ -142,8 +131,6 @@ a:focus-visible, .botao:focus-visible {
 .secao--noite .secao__titulo { color: var(--branco); border-left: 6px solid var(--verde-claro); padding-left: .9rem; }
 .secao--clara .secao__titulo { color: var(--azul-escuro); border-left: 6px solid var(--verde); padding-left: .9rem; }
 
-/* 4. SEÇÕES ------------------------------------------------ */
-/* Hero */
 .hero { position: relative; background: var(--azul-noite); }
 .hero__imagem {
   width: 100%;
@@ -163,7 +150,6 @@ a:focus-visible, .botao:focus-visible {
 }
 .hero__cartao h1 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
 
-/* Sobre */
 .sobre__grade {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -189,14 +175,12 @@ a:focus-visible, .botao:focus-visible {
   font-size: .95rem;
 }
 
-/* Faixa */
 .faixa img {
   width: 100%;
   height: clamp(180px, 28vw, 380px);
   object-fit: cover;
 }
 
-/* Livros */
 .livros__grade {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -224,7 +208,6 @@ a:focus-visible, .botao:focus-visible {
 }
 .cartao p { font-size: 1rem; flex: 1; }
 
-/* Unidades */
 .unidade {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -237,7 +220,6 @@ a:focus-visible, .botao:focus-visible {
 .unidade h3 { font-size: 1.4rem; color: var(--verde-claro); }
 .unidade p { margin: 0; max-width: 60ch; }
 
-/* Contatos */
 .contatos__grade {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -248,7 +230,6 @@ a:focus-visible, .botao:focus-visible {
 .contatos a { color: var(--azul); font-weight: 500; }
 .contatos__imagem { width: 100%; border-radius: var(--raio); }
 
-/* Rodapé */
 .rodape {
   background: var(--azul-noite);
   color: var(--branco);
@@ -258,8 +239,6 @@ a:focus-visible, .botao:focus-visible {
 }
 .rodape p { margin: 0; }
 
-/* 5. RESPONSIVIDADE ---------------------------------------- */
-/* Tablet */
 @media (max-width: 900px) {
   .sobre__grade { grid-template-columns: 1fr; }
   .sobre__imagem { max-width: 520px; }
@@ -269,7 +248,6 @@ a:focus-visible, .botao:focus-visible {
   .contatos__imagem { max-width: 420px; }
 }
 
-/* Smartphone */
 @media (max-width: 640px) {
   body { font-size: 1rem; }
   .secao { padding: 3rem 0; }
@@ -279,7 +257,6 @@ a:focus-visible, .botao:focus-visible {
   .menu__lista a { padding: .5rem .6rem; font-size: .9rem; }
   html { scroll-padding-top: 110px; }
 
-  /* O cartão do hero sai de cima da imagem para não cobri-la */
   .hero__cartao {
     position: static;
     transform: none;
@@ -292,7 +269,6 @@ a:focus-visible, .botao:focus-visible {
   .unidade { grid-template-columns: 1fr; gap: 1rem; }
 }
 
-/* Respeita quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .botao { transition: none; }
